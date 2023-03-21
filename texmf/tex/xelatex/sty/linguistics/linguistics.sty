@@ -1,0 +1,23 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{linguistics}[2023/03/21 Packages for linguistics.]
+
+\RequirePackage{xparse}
+
+% Define macros for phonemic transcriptions.
+\RequirePackage{fonts}
+\NewDocumentCommand{\wipa}{ m }{\textipa{/#1/}}
+\NewDocumentCommand{\nipa}{ m }{\textipa{[#1]}}
+\NewDocumentCommand{\orth}{ m }{⟨#1⟩}
+
+% Linguistics Packages.
+
+\RequirePackage{gb4e}
+% Disable gb4e's enabling of _ and ^ outside math mode.
+\noautomath
+% `memoir` defines the glossary commands, and `glossaries` (imported by `leipzig`) complains. Suppress warnings.
+\let\printglossary\relax
+\let\theglossary\relax
+\let\endtheglossary\relax
+\RequirePackage{leipzig}
+
+\endinput

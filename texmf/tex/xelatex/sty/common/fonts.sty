@@ -1,0 +1,18 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{fonts}[2023/03/21 Fonts.]
+
+\RequirePackage{xparse}
+
+\RequirePackage{fontsetup}
+
+\RequirePackage[nopatch=footnote]{microtype}
+
+\RequirePackage{realscripts}
+\RequirePackage{fnpct}
+
+% Place the argument in small caps.
+\NewDocumentCommand{\impt}{ m }{\textsc{#1}}
+% Place the argument in italics with swashes.
+\NewDocumentCommand{\swash}{ m }{{\addfontfeatures{RawFeature=+swsh}\itshape#1}}
+
+\endinput

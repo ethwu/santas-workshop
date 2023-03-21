@@ -1,0 +1,16 @@
+\documentclass[root=.., baseclass=multiexample]{multidocument}
+
+% Imports required to compile this specific file.
+\usepackage{lipsum}
+
+\begin{document}
+
+\rsection{This is the First Top-Level Section}
+
+\rsubsection{This is a Subsection of the First Top-Level Section}
+
+\lipsum
+
+\rsinput{children/grandchildren/grandchild.tex}
+
+\end{document}

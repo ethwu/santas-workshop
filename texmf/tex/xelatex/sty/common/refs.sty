@@ -1,0 +1,12 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{refs}[2023/03/21 Hyperlinked references and other referencing commands.]
+
+\RequirePackage{xparse}
+
+\RequirePackage[breaklinks, hidelinks]{hyperref}
+\RequirePackage{cleveref}
+
+\NewDocumentCommand{\longref}{ m }{\cref{#1} on~\cpageref{#1}}
+\NewDocumentCommand{\longlabelref}{ m }{\labelcref{#1} on~\cpageref{#1}}
+
+\endinput

@@ -1,0 +1,41 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{hdr}[2023/03/21 Styled headers and footers.]
+
+\RequirePackage{kvoptions}
+\RequirePackage{xparse}
+
+% Whether the document is two-sided.
+\DeclareBoolOption{twoside}
+
+\ProcessKeyvalOptions*\relax
+
+\RequirePackage{fancyhdr}
+
+\fancypagestyle{plain}{
+    \fancyhead{}
+    \renewcommand*{\headrulewidth}{\z@}
+    % \renewcommand*{\footrulewidth}{\z@}
+    \fancyfoot[C]{}
+}
+\ifhdr@twoside
+    \fancypagestyle{fancy}{
+        \fancyhead[RE, LO]{\MakeUppercase{\leftmark}}
+        \fancyhead[LE, RO]{\rightmark}
+        \fancyfoot[C]{}
+        \fancyfoot[LE, RO]{\thepage}
+    }
+\else
+    \fancypagestyle{fancy}{
+        \fancyhead[L]{\MakeUppercase{\leftmark}}
+        \fancyhead[R]{\rightmark}
+        \fancyfoot[C]{\thepage}
+    }
+\fi
+
+\pagestyle{fancy}
+
+% Style the section and subsection in the header.
+\RenewDocumentCommand{\sectionmark}{ m }{\markboth{\thesection\quad#1}{}}
+\RenewDocumentCommand{\subsectionmark}{ m }{\markright{\thesubsection\quad\itshape#1}}
+
+\endinput
