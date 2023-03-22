@@ -1,9 +1,18 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{fonts}[2023/03/21 Fonts.]
+\ProvidesPackage{sw-fonts}[2023/03/21 Fonts.]
 
 \RequirePackage{xparse}
 
 \RequirePackage{fontsetup}
+% `fontsetup` loads `fontspec` and sets the default font to New Computer Modern.
+% It also defines an
+\RenewDocumentCommand{\ipatext}{ }{%
+    \addfontfeature{%
+        UprightFeatures = {%
+            StylisticSet = 5,%
+        },%
+    }%
+}
 
 \RequirePackage[nopatch=footnote]{microtype}
 
