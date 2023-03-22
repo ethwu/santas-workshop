@@ -17,7 +17,7 @@
     % \renewcommand*{\footrulewidth}{\z@}
     \fancyfoot[C]{}
 }
-\ifcsname\@currname @twoside\endcsname
+\expandafter\csname if\@currname @twoside\endcsname
     \fancypagestyle{fancy}{%
         \fancyhead[RE, LO]{\MakeUppercase{\leftmark}}
         \fancyhead[LE, RO]{\rightmark}
