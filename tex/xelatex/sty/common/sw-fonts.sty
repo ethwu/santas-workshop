@@ -20,6 +20,10 @@
 \RequirePackage{realscripts}
 \RequirePackage{fnpct}
 
+\RequirePackage{hyphenat}
+\NewDocumentCommand{\BreakableEmDash}{ }{\leavevmode%
+    \prw@zbreak\textemdash\discretionary{-}{}{}\prw@zbreak}
+
 % Place the argument in small caps.
 \NewDocumentCommand{\impt}{ m }{\textsc{#1}}
 % Place the argument in italics with swashes.
