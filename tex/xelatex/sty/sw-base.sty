@@ -1,0 +1,12 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sw-base}[2023-03-21 Load the basic sw styles.]
+
+% Font setup.
+\RequirePackage{sw-fonts}
+
+\AtBeginDocument{
+    % Load the referencing packages.
+    \RequirePackage{sw-refs}
+}
+
+\endinput

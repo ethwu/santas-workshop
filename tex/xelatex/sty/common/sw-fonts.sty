@@ -5,7 +5,8 @@
 
 \RequirePackage{fontsetup}
 % `fontsetup` loads `fontspec` and sets the default font to New Computer Modern.
-% It also defines an
+% It also defines an IPA font that causes errors when trying to use stylistic
+% set 5 in italics, so we redefine it here.
 \RenewDocumentCommand{\ipatext}{ }{%
     \addfontfeature{%
         UprightFeatures = {%
