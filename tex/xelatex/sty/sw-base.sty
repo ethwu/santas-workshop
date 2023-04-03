@@ -1,12 +1,14 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{sw-base}[2023-03-21 Load the basic sw styles.]
+\ProvidesPackage{sw-base}[2023-04-03 Load the basic sw styles.]
+
+\RequirePackage{etoolbox}
 
 % Font setup.
 \RequirePackage{sw-fonts}
 
-\AtBeginDocument{
+\AtEndPreamble{%
     % Load the referencing packages.
-    \RequirePackage{sw-refs}
+    \RequirePackage{sw-refs}%
 }
 
 \endinput
