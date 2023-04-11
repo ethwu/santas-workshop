@@ -21,8 +21,15 @@
 \RequirePackage{fnpct}
 
 \RequirePackage{hyphenat}
+% Extend `hyphenat` further with macros for em and en dashes.
+\NewDocumentCommand{\BreakableEnDash}{ }{\leavevmode%
+    \prw@zbreak\textendash\discretionary{-}{}{}\prw@zbreak}
 \NewDocumentCommand{\BreakableEmDash}{ }{\leavevmode%
     \prw@zbreak\textemdash\discretionary{-}{}{}\prw@zbreak}
+\DeclareRobustCommand{\enhyp}{%
+    \ifmmode\text\textendash\else\BreakableEnDash\fi}
+\DeclareRobustCommand{\emhyp}{%
+    \ifmmode\text\textemdash\else\BreakableEmDash\fi}
 
 % Place the argument in small caps.
 \NewDocumentCommand{\impt}{ m }{\textsc{#1}}
