@@ -1,13 +1,16 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{sw-linguistics}[2023/03/21 Packages for linguistics.]
+\ProvidesPackage{sw-linguistics}[2023-04-11 Packages for linguistics.]
 
 \RequirePackage{xparse}
 
 % Define macros for phonemic transcriptions.
 \RequirePackage{sw-fonts}
-\NewDocumentCommand{\wipa}{ m }{\textipa{/#1/}}
-\NewDocumentCommand{\nipa}{ m }{\textipa{[#1]}}
-\NewDocumentCommand{\orth}{ m }{⟨#1⟩}
+\NewDocumentCommand{\wI}{ m }{\textipa{/#1/}}
+\let\wipa\wI
+\NewDocumentCommand{\nI}{ m }{\textipa{[#1]}}
+\let\nipa\nI
+\NewDocumentCommand{\oR}{ m }{\textlangle#1\textrangle}
+\let\orth\oR
 
 % Linguistics Packages.
 
